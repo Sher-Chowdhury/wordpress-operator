@@ -7,13 +7,18 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+// Imageinfodetails defines custom image details
+type Imageinfodetails struct {
+	Imagename string `json:"imagename"`
+	Imagetag  string `json:"imagetag"`
+}
+
 // WordpressSpec defines the desired state of Wordpress
 type WordpressSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
 	// Add custom validation using kubebuilder tags: https://book-v1.book.kubebuilder.io/beyond_basics/generating_crd.html
-        Podimage string `json:"podimage"`
-
+	Imageinfo Imageinfodetails `json:"imageinfo"`
 }
 
 // WordpressStatus defines the observed state of Wordpress

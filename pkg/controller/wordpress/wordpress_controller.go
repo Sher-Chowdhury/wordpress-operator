@@ -134,7 +134,8 @@ func newPodForCR(cr *cachev1alpha1.Wordpress) *corev1.Pod {
 	labels := map[string]string{
 		"app": cr.Name,
 	}
-	imagename := cr.Spec.Podimage
+	imagename := cr.Spec.Imageinfo.Imagename
+	imagetag := cr.Spec.Imageinfo.Imagetag
 	return &corev1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      cr.Name + "-pod",
@@ -145,7 +146,7 @@ func newPodForCR(cr *cachev1alpha1.Wordpress) *corev1.Pod {
 			Containers: []corev1.Container{
 				{
 					Name:    imagename,
-					Image:   imagename,
+					Image:   imagename + ":" + imagetag,
 					Command: []string{"sleep", "3600"},
 				},
 			},

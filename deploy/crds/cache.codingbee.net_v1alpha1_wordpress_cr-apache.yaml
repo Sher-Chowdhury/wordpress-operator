@@ -4,4 +4,6 @@ metadata:
   name: apache-wordpress
 spec:
   # Add fields here
-  podimage: httpd
+  imageinfo:
+    imagename: httpd
+    imagetag: latest
