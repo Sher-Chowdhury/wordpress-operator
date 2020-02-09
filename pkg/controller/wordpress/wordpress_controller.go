@@ -136,7 +136,12 @@ func newPodForCR(cr *cachev1alpha1.Wordpress) *corev1.Pod {
 	}
 	imagename := cr.Spec.Imageinfo.Imagename
 	imagetag := cr.Spec.Imageinfo.Imagetag
+
+	// Here we are instantiating a struct. This struct is defined in the corev1 package.
+	// https://pkg.go.dev/k8s.io/api/core/v1?tab=doc#Pod
 	return &corev1.Pod{
+		// this key value, is a key storing another struct as a variable. lots of nesting going on
+		// here.
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      cr.Name + "-pod",
 			Namespace: cr.Namespace,
