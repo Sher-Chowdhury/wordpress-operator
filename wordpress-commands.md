@@ -7,7 +7,7 @@ operator-sdk add api --api-version=cache.codingbee.net/v1alpha1 --kind=Wordpress
 kubectl create -f deploy/crds/cache.codingbee.net_wordpresses_crd.yaml
 ```
 
-## this results in:
+this results in:
 
 ```sh
 $ kubectl get customresourcedefinitions | grep -i wordpress
@@ -15,7 +15,6 @@ wordpresses.cache.codingbee.net                            2020-02-09T12:52:08Z
 
 $ kubectl get customresourcedefinitions wordpresses.cache.codingbee.net -o yaml
 ```
-
 
 ```sh
 kubectl create -f deploy/crds/cache.codingbee.net_v1alpha1_wordpress_cr.yaml
