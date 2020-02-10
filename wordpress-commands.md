@@ -23,7 +23,6 @@ kubectl create -f deploy/crds/cache.codingbee.net_v1alpha1_wordpress_cr.yaml
 
 This ends up creating a custom resource:
 
-
 ```sh
 $ kubectl get wordpress
 NAME                AGE
@@ -37,9 +36,6 @@ kubectl delete customresourcedefinitions wordpresses.cache.codingbee.net
 ```
 
 This ends up wiping out the crd's etc table along with all the cr entries it has contained within it.  
-
-
-
 
 ```sh
 operator-sdk add controller --api-version=cache.codingbee.net/v1alpha1 --kind=Wordpress
