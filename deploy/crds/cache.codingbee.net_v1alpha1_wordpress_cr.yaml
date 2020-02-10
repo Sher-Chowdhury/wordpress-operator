@@ -4,4 +4,6 @@ metadata:
   name: example-wordpress
 spec:
   # Add fields here
-  podimage: busybox
+  imageinfo:
+    imagename: httpd
+    imagetag: lates
